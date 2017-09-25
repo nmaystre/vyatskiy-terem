@@ -1,0 +1,76 @@
+//NAVIGATION LAYOUT
+.navigation {
+    &__list {
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        padding-top: em(45);
+        display: flex;
+        justify-content: space-between;
+        @media #{$breakpointMobile} {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__item {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__link {
+        position: relative;
+        display: inline-block;
+        font-size: em(20);
+        line-height: em(24,20);
+        color: $color-lightest;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 500;
+        @media #{$breakpointMobile} {
+            margin-bottom: em(20);
+        }
+
+            &:hover {
+            color: $color-primary;
+            transition: all 1s;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background-color: $color-lightest;
+            transition: all 1s;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            width: 0;
+            height: 1px;
+            background-color: $color-lightest;
+            transition: all 1s;
+        }
+        &:hover::before {
+            width: 50%;
+            background-color: $color-primary;
+        }
+        &:hover::after {
+            width: 50%;
+            background-color: $color-primary;
+        }
+    }
+
+    // Type Inline
+    &_type_inline &__item {
+        display: inline-block;
+    }
+    
+}

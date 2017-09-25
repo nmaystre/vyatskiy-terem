@@ -1,0 +1,98 @@
+// Base
+$browser-context: 16; // Default
+@media #{$breakpointTablet} {
+    $browser-context: 14;
+}
+
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust:none;
+    text-size-adjust: none;
+}
+
+html, body {
+    position: relative;
+    min-height: 100%;
+    font-size: 16px;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    @media #{$breakpointTablet} {
+        font-size: 14px;
+    }
+}
+
+body {
+    position: relative;
+    background-color: #fff;
+    color: #000;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+h1 {
+    font-family: 'Gotham Pro', sans-serif;
+}
+
+h2 {
+    font-family: 'Gotham Pro', sans-serif;
+}
+
+h3 {
+    font-family: 'Gotham Pro', sans-serif;
+}
+
+a {
+    @include transition (all 0.3s linear);
+    outline: none;
+    color: #000;
+    
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+p {
+    font-weight: 400;
+    font-size: em(20);
+    line-height: em(30);
+    margin: em(20) em(0);
+}
+
+button {
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+input[type="text"],
+input[type="submit"],
+input[type="button"],
+select,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}

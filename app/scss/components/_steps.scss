@@ -1,0 +1,242 @@
+.steps {
+  padding-top: em(60);
+  background-color: $color-secondary--darkest;
+  position: relative;
+
+  &::before {
+    content: "";
+    @include triangle-decor--left($color-secondary--darkest);
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-left: em(60);
+    padding-right: em(60);
+    margin-top: -60px;
+  }
+
+  &__title {
+    @media #{$breakpointMobile} {
+      padding-bottom: em(30);
+    }
+  }
+
+  &__item {
+    position: relative;
+    //min-width: 250px;
+    width: 26.9007634%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    @media #{$breakpointTablet} {
+      width: 40%;
+    }
+    @media #{$breakpointMobile} {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    &:nth-child(n+4) {
+      margin-top: em(40);
+      @media #{$breakpointDisplay} {
+        margin-top: 0;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 40%;
+      right: -90px;
+      width: 110px;
+      height: 35px;
+      background-image: url("../images/arrow1.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      @media #{$breakpointDisplay} {
+        right: -60px;
+        width: 80px;
+      }
+      @media #{$breakpointMobile} {
+        bottom: -45px;
+        right: -30px;
+        background-image: url("../images/arrow2.png");
+        height: 110px;
+        width: 35px;
+      }
+    }
+
+    &--second {
+      &::before {
+
+        @media #{$breakpointTablet} {
+          height: 110px;
+          width: 35px;
+          background-image: url("../images/arrow2.png");
+          bottom: -60px;
+          right: -30px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &--third {
+      @media #{$breakpointTablet} {
+        order: 1;
+      }
+
+      &::before {
+        height: 110px;
+        width: 35px;
+        background-image: url("../images/arrow2.png");
+        bottom: -60px;
+        right: -30px;
+        margin-bottom: 0;
+
+        @media #{$breakpointDisplay} {
+          bottom: -100px;
+        }
+        @media #{$breakpointTablet} {
+          bottom: 40%;
+          right: inherit;
+          left: -70px;
+          width: 80px;
+          height: 35px;
+          background-image: url("../images/arrow1.png");
+          transform: rotate(180deg);
+        }
+        @media #{$breakpointMobile} {
+          top: inherit;
+          left: inherit;
+          transform: inherit;
+          bottom: -45px;
+          right: -30px;
+          background-image: url("../images/arrow2.png");
+          height: 110px;
+          width: 35px;
+        }
+      }
+    }
+
+    &--fourth {
+      @media #{$breakpointMobile} {
+        order: 1;
+      }
+
+      &::before {
+        display: none;
+        @media #{$breakpointTablet} {
+          display: block;
+          height: 110px;
+          width: 35px;
+          background-image: url("../images/arrow2.png");
+          right: inherit;
+          left: -60px;
+          top: inherit;
+          bottom: -80px;
+          transform: rotate(180deg) scale(1, -1);
+        }
+        @media #{$breakpointMobile} {
+          top: inherit;
+          left: inherit;
+          transform: inherit;
+          bottom: -70px;
+          right: -30px;
+          background-image: url("../images/arrow2.png");
+          height: 110px;
+          width: 35px;
+        }
+      }
+    }
+
+    &--fifth {
+      @media #{$breakpointTablet} {
+        order: 2;
+      }
+
+      &::before {
+        transform: rotate(180deg);
+        bottom: 35%;
+
+        @media #{$breakpointDisplay} {
+          bottom: 45%;
+        }
+        @media #{$breakpointTablet} {
+          transform: rotate(0);
+          right: -80px;
+        }
+        @media #{$breakpointMobile} {
+          top: inherit;
+          left: inherit;
+          transform: inherit;
+          bottom: -55px;
+          right: -30px;
+          background-image: url("../images/arrow2.png");
+          height: 110px;
+          width: 35px;
+        }
+      }
+    }
+    &--sixth {
+
+      @media #{$breakpointTablet} {
+        order: 3;
+      }
+
+      &::before {
+        transform: rotate(180deg);
+        bottom: 35%;
+
+        @media #{$breakpointDisplay} {
+          bottom: 45%;
+        }
+        @media #{$breakpointTablet} {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__item-pic {
+    margin: em(120) em(30) em(10);
+    width: 78%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-secondary--darken;
+    border: 1px solid $color-secondary;
+    transition: all 1s;
+
+    img {
+      max-width: 60%;
+      height: auto;
+      max-height: 60%;
+    }
+
+    @media #{$breakpointTablet} {
+      height: 180px;
+    }
+
+    @media #{$breakpointMobile} {
+      height: 150px;
+      margin-top: em(60);
+    }
+
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
+
+  &__text {
+    text-transform: uppercase;
+    color: $color-lightest;
+    margin-bottom: 0;
+    line-height: em(20, 20);
+  }
+
+}

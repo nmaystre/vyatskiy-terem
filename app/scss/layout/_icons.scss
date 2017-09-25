@@ -1,0 +1,51 @@
+/* Icons */
+.icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: sans-serif !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Paste icons here
+
+.icon-close {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        width: 50px;
+        height: 2px;
+        background-color: $color-darkest;
+        transform: rotate(45deg);
+        @media #{$breakpointMobile} {
+            width: 30px;
+            left: 40px;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        width: 50px;
+        height: 2px;
+        background-color: $color-darkest;
+        transform: rotate(-45deg);
+        @media #{$breakpointMobile} {
+            width: 30px;
+            left: 40px;
+        }
+    }
+}

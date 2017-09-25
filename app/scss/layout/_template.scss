@@ -1,0 +1,56 @@
+//Template
+%wrp {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: em(65,16);
+    padding-right: em(65,16);
+
+    @media #{$breakpointDisplay} {
+        max-width: 960px;
+        padding-left: em(35,16);
+        padding-right: em(35,16);
+    }
+    @media #{$breakpointTablet} {
+        max-width: 740px;
+    }
+
+    @media #{$breakpointMobile} {
+        min-width: 300px;
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    @include opacity(0);
+    visibility: hidden !important;
+}
+
+.overflow {
+    overflow: hidden !important;
+}
+
+
+@media #{$breakpointDisplay} {
+    .md-hide {
+        display: none!important;
+    }
+}
+
+@media #{$breakpointTablet} {
+    .sm-hide {
+        display: none!important;
+    }
+}
+
+@media #{$breakpointMobile} {
+    .xs-hide {
+        display: none!important;
+    }
+}

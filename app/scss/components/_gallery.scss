@@ -1,0 +1,129 @@
+.gallery {
+  position: relative;
+  padding-bottom: em(100);
+  padding-top: em(60);
+  @media #{$breakpointMobile} {
+    padding-top: em(30);
+    padding-bottom: em(50);
+  }
+
+  &::before {
+    content: "";
+    @include triangle-decor--left($color-lightest);
+  }
+
+  &__title {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: em(20,16);
+    text-align: center;
+    max-width: 965px;
+    @media #{$breakpointDisplay} {
+    max-width: 70%;
+    }
+    @media #{$breakpointTablet} {
+      max-width: 90%;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $color-secondary;
+      @media #{$breakpointDisplay} {
+        left: 100px;
+        right: 100px;
+        width: auto;
+      }
+      @media #{$breakpointMobile} {
+        left: 50px;
+        right: 50px;
+      }
+    }
+  }
+
+  &__subtitle {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__item {
+    position: relative;
+    width: em(750);
+    margin: em(15, 16);
+    @media #{$breakpointDisplay} {
+      width: em(600);
+      margin: em(10);
+    }
+    @media #{$breakpointMobile} {
+      width: 300px;
+      margin: 5px;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-darkest, 0.7);
+      transition: all 1s;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+
+      @media #{$breakpointMobile} {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  .slick-active::before {
+    background-color: transparent;
+  }
+
+  &__item-content {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-height: em(75);
+    transition: all 1s;
+
+
+
+    .slick-active & {
+      background-color: rgba($color-darkest, 0.7);
+    }
+  }
+
+  &__item-text {
+    display: inline-block;
+    color: #fff;
+    padding-top: 25px;
+    padding-left: 25px;
+    font-weight: 700;
+    font-size: em(20);
+    @media #{$breakpointMobile} {
+      padding-top: 10px;
+    }
+  }
+
+  &__list {
+    padding-top: em(80);
+    padding-bottom: em(80);
+    @media #{$breakpointDisplay} {
+      padding-top: em(40);
+      padding-bottom: em(40);
+    }
+  }
+}

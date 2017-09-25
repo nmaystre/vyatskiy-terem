@@ -1,0 +1,11 @@
+{
+  "name": "kdm",
+  "version": "1.0.0",
+  "authors": [
+    "vkozhevnikova <vika@kdm1.ru>",
+    "maikubu <makar@kdm1.ru>"
+  ],
+  "description": "kdm site",
+  "license": "MIT",
+  "dependencies": {}
+}

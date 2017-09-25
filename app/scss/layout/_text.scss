@@ -1,0 +1,15 @@
+.text {
+  font-weight: 400;
+  font-size: em(20);
+  line-height: em(30);
+  margin: em(20) em(0);
+
+  &--light {
+    color: $color-lightest;
+  }
+
+  &--highlight {
+    font-size: em(25);
+    line-height: 32px;
+  }
+}

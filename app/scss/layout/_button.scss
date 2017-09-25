@@ -1,0 +1,82 @@
+//Button
+.button {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+
+    background: none;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1em;
+    text-decoration: none;
+    margin: 0;
+    
+    border: none;
+    outline: 0;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    @include transition (all 0.3s linear);
+
+    &--primary {
+        border-radius: 5px;
+        box-shadow: inset 0px 3px 0.92px 1.08px rgba(88, 67, 19, 0.09);
+        background-color: $color-primary;
+        &:hover {
+            background-color: $color-secondary;
+        }
+    }
+
+    &--secondary {
+        border-radius: 5px;
+        box-shadow: inset 0px 3px 0.92px 1.08px rgba(88, 67, 19, 0.09);
+        background-color: $color-secondary;
+        &:hover {
+            background-color: $color-primary;
+        }
+    }
+    
+    &--m {
+        min-width: em(360);
+        min-height: em(70);
+        padding: 0;
+        @media #{$breakpointMobile} {
+            min-width: em(300);
+            min-height: em(55);
+        }
+    }
+
+    &--s {
+
+    }
+    
+    &--l {
+        width: 100%;
+        min-height: em(70);
+        padding: 0;
+    }
+
+    &--align-center {
+        margin: auto;
+    }
+
+    &__text {
+        color: $color-lightest;
+        font-size: em(25);
+        padding-top: 17px;
+        display: inline-block;
+        @media #{$breakpointMobile} {
+            font-size: em(23);
+            padding-top: 10px;
+        }
+
+        &--popup {
+            display: inline;
+        }
+    }
+}
+

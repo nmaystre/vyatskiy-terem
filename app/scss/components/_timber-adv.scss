@@ -1,0 +1,134 @@
+.timber-adv {
+  background-color: $color-bg-dark;
+
+  &__inner {
+    padding-left: em(150);
+    padding-right: em(150);
+    text-align: center;
+    padding-top: em(50);
+    @media #{$breakpointTablet} {
+      padding-left: em(70,16);
+      padding-right: em(70,16);
+    }
+    @media #{$breakpointMobile} {
+      padding-left: em(10,16);
+      padding-right: em(10,16);
+    }
+  }
+
+  &__content {
+    padding-top: em(140);
+    @media #{$breakpointTablet} {
+      padding-top: em(70);
+    }
+    @media #{$breakpointMobile} {
+      padding-top: em(20);
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    @media #{$breakpointMobile} {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &--pic {
+      display: block;
+      img {
+        width: 80%;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      @media #{$breakpointMobile} {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    @media #{$breakpointMobile} {
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+      padding: em(10) 0 em(10) em(70);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+      background-image: url("../images/icon_plant.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: none;
+      @media #{$breakpointMobile} {
+        display: block;
+      }
+    }
+
+    &--therm::before {
+      background-image: url("../images/icon_therm.png");
+    }
+
+    &--fire::before {
+      background-image: url("../images/icon_fire.png");
+    }
+
+    &--eco::before {
+      background-image: url("../images/icon_plant.png");
+    }
+
+    &--house::before {
+      background-image: url("../images/icon_bighouse.png");
+    }
+
+    &--checklist::before {
+      background-image: url("../images/icon_stable.png");
+    }
+
+    &--like::before {
+      background-image: url("../images/icon_strong.png");
+    }
+
+
+  }
+
+  &__text {
+    color: $color-lightest;
+    margin: 0;
+    line-height: em(24,20);
+    transition: all 1s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__slogan {
+    font-size: em(30);
+    line-height: em(24,30);
+    color: $color-lightest;
+    padding-top: 140px;
+    padding-bottom: 70px;
+    @media #{$breakpointTablet} {
+      padding-top: 70px;
+      padding-bottom: 50px;
+    }
+  }
+
+
+
+}

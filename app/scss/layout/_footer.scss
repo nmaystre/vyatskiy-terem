@@ -1,0 +1,133 @@
+//FOOTER LAYOUT
+.footer {
+  background-color: $color-bg-dark;
+  color: $color-lightest;
+  padding-bottom: em(200);
+  padding-top: em(40);
+
+  &__wrp {
+    @extend %wrp;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    @media #{$breakpointMobile} {
+      flex-direction: column;
+    }
+
+    &::before {
+      content: "";
+      top: 20px;
+      left: 20%;
+      right: 20%;
+      position: absolute;
+      height: 1px;
+      background-color: $color-lightest;
+      @media #{$breakpointMobile} {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 33%;
+    text-align: center;
+    @media #{$breakpointMobile} {
+      margin-top: em(20);
+      width: 100%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &::before {
+      z-index: 5;
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 0;
+      height: 5px;
+      background-color: $color-lightest;
+      transition: all 1s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      right: 50%;
+      width: 0;
+      height: 5px;
+      background-color: $color-lightest;
+      transition: all 1s;
+    }
+
+    &:hover::before {
+      width: 50%;
+      background-color: $color-primary;
+    }
+
+    &:hover::after {
+      width: 50%;
+      background-color: $color-primary;
+    }
+  }
+
+  &__item-pic {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: $color-bg-dark;
+    background-image: url("../images/icon_geo.png");
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+
+    &--mail {
+      position: relative;
+      left: -5px;
+      background-image: url("../images/icon_mail.png");
+      width: 200px;
+    }
+    &--tel {
+      position: relative;
+      right: -5px;
+      background-image: url("../images/icon_phone.png");
+      width: 200px;
+    }
+  }
+
+  &__link {
+    color: $color-lightest;
+    text-decoration: none;
+    font-size: em(25, 16);
+    line-height: em(32, 25);
+    margin: 0;
+    padding-top: em(10);
+    transition: all 1s;
+
+    @media #{$breakpointTablet} {
+      font-size: em(20, 16);
+      line-height: em(32, 25);
+    }
+  }
+
+  a {
+    transition: all 1s;
+
+    &:hover {
+
+      color: $color-primary;
+    }
+  }
+}

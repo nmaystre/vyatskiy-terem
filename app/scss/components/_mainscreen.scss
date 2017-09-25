@@ -1,0 +1,91 @@
+.main-screen {
+  position: relative;
+  background-color: $color-bg-dark;
+  background-image: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: em(120);
+  @media #{$breakpointMobile} {
+    padding-bottom: em(60);
+    margin-bottom: em(60);
+  }
+    //min-height: 100vh;
+
+  &::after {
+    content: '';
+    @include triangle-decor--righthalf;
+  }
+
+  &::before {
+    content: '';
+    @include triangle-decor--lefthalf;
+  }
+
+  &__inner {
+    padding-top: 13%;
+    padding-bottom: 8%;
+  }
+
+  &__title {
+    max-width: 1000px;
+    margin: auto;
+    @media #{$breakpointDisplay} {
+      max-width: 600px;
+    }
+    @media #{$breakpointTablet} {
+      max-width: 500px;
+    }
+      @media #{$breakpointMobile} {
+      font-size: em(30);
+        width: 90%;
+      max-width: 400px;
+      margin: auto;
+      margin-top: em(60);
+      margin-bottom: em(30);
+    }
+  }
+
+  &__text {
+    margin-bottom: em(45);
+    @media #{$breakpointTablet} {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 500px;
+    }
+    @media #{$breakpointMobile} {
+      display: none;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__decor-wrp {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: -30px;
+    margin-left: -30px;
+    @media #{$breakpointMobile} {
+      bottom: -20px;
+      margin-left: -20px;
+    }
+  }
+
+  &__decor {
+    position: relative;
+    z-index: 10;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: $color-secondary;
+    transform: rotate(45deg);
+    @media #{$breakpointMobile} {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

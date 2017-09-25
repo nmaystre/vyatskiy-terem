@@ -1,0 +1,45 @@
+//Heading
+.heading {
+    font-family: 'Gotham Pro', sans-serif;
+    font-weight: 700;
+
+    &--light {
+        color: $color-lightest;
+    }
+    
+    &--h1 {
+        font-size: em(50);
+        line-height: em(60,50);
+        margin: 50px 0;
+        @media #{$breakpointTablet} {
+            font-size: em(40);
+            line-height: em(60,50);
+        }
+    }
+
+    &--h2 {
+        font-size: em(25);
+        line-height: em(32,25);
+        margin: 30px 0;
+        text-transform: uppercase;
+        font-weight: 500;
+        @media #{$breakpointMobile} {
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &--h3 {
+    }
+    
+    &--align-center {
+        text-align: center;
+    }
+}
+
+.subheading {
+    font-size: em(25);
+    line-height: em(32,25);
+    margin: rem(20) em(0);
+}

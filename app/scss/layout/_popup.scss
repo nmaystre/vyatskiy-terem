@@ -1,0 +1,88 @@
+//POPUP
+
+.mfp-bg {
+	background-color: rgba(0,0,0,.5);
+	position: fixed !important;
+}
+
+.mfp-wrap {
+	
+}
+
+.mfp-close {
+	display: none !important;
+}
+
+.popup__close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	@include opacity(1);
+	line-height: em(23);
+	font-size: em(23);
+	color: #fff;
+	text-decoration: none;
+	border: 0;
+	outline: 0;
+	z-index: 5;
+	cursor: pointer;
+	@include transition(all 0.3s linear);
+	
+	span {
+		display: inline-block;
+		padding: em(20,23);
+	}
+
+	&:hover {
+		color: #fff;
+	}
+
+	&:active {
+		color: #fff;
+		@include scale(0.9);
+	}
+}
+
+.popup {
+	width: 100%;
+	max-width: 800px;
+	min-height: 250px;
+	padding: 0 em(40) em(60);
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin: 0 auto;
+	position: relative;
+	color: $color-darkest;
+	background-color: $color-lightest;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	@media #{$breakpointTablet} {
+		width: 80%;
+		max-width: 700px;
+	}
+	@media #{$breakpointMobile} {
+		width: 90%;
+		padding-left: em(20);
+		padding-right: em(20);
+		max-width: 400px;
+	}
+}
+
+.popup__content {
+	min-height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.popup__heading {
+	margin: em(20) 0;
+}
+
+.popup__subhead {
+	margin: em(20) 0;
+}
